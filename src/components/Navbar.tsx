@@ -33,7 +33,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className="nav-link">Home</Link>
             <Link href="/career-paths" className="nav-link">Career Paths</Link>
-            <Link href="/resources" className="nav-link">Free Resources</Link>
+            <Link href="/documentation" className="nav-link">Documentation</Link>
             <Link href="/certifications" className="nav-link">Certifications</Link>
             <Link href="/about" className="nav-link">About</Link>
             <Link href="/contact" className="nav-link">Contact</Link>
