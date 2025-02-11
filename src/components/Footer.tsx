@@ -12,12 +12,12 @@ const socialLinks = [
   },
   {
     name: 'Twitter',
-    url: 'https://twitter.com/codinglanka',
+    url: 'https://www.threads.net/@janindu_inspires',
     icon: '/icons/twitter.svg'
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/company/codinglanka',
+    url: 'https://linkedin.com/in/janinduamaraweera',
     icon: '/icons/linkedin.svg'
   }
 ];
@@ -116,8 +116,9 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
             <div className="space-y-4">
               <p className="text-gray-400">
-                <span className="block">Email: contact@codinglanka.com</span>
+                <span className="block">Email: janiduamaraweera@gmail.com</span>
                 <span className="block mt-1">Location: Colombo, Sri Lanka</span>
+                <span className="block mt-2">Mobile: +94 783974674</span>
               </p>
               
               {/* Social Media Links */}

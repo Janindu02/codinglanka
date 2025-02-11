@@ -53,12 +53,17 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Janindu Amaraweera",
       role: "Frontend Developer",
-      image: "/images/testimonials/sarah.jpg",
-      text: "Coding Lanka helped me transition from a beginner to a professional developer in just 6 months!"
+      image: "/images/home/janindua.jpg",
+      text: "The structured learning path and comprehensive documentation at Coding Lanka were instrumental in helping me master backend development. The community support is amazing!"
     },
-    // Add more testimonials...
+    {
+      name: "Minindu Thiranjaya",
+      role: "Backend Developer",
+      image: "/images/home/minindu.png",
+      text: "Coding Lanka helped me transition from a beginner to a professional developer in just few months!"
+    }
   ];
 
   return (
@@ -169,7 +174,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
           What Our Students Say
         </h2>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {testimonials.map((testimonial) => (
             <div key={testimonial.name} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
               <div className="flex flex-col items-center text-center">
@@ -180,9 +185,15 @@ export default function Home() {
                   height={80}
                   className="rounded-full mb-6"
                 />
-                <p className="text-lg text-gray-600 dark:text-gray-300 italic mb-6 leading-relaxed">"{testimonial.text}"</p>
-                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{testimonial.name}</h4>
-                <p className="text-base text-gray-500 dark:text-gray-400">{testimonial.role}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-300 italic mb-6 leading-relaxed">
+                  "{testimonial.text}"
+                </p>
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  {testimonial.name}
+                </h4>
+                <p className="text-base text-gray-500 dark:text-gray-400">
+                  {testimonial.role}
+                </p>
               </div>
             </div>
           ))}
