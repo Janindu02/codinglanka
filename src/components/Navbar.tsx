@@ -38,7 +38,7 @@ export default function Navbar() {
             <Link href="/about" className="nav-link">About</Link>
             <Link href="/contact" className="nav-link">Contact</Link>
             <Link 
-              href="/get-started" 
+              href="/career-paths" 
               className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
             >
               Get Started

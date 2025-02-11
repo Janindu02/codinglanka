@@ -1,5 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
+'use client';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
@@ -63,132 +66,143 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-        <div className="text-center pt-16">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-            <span className="block">Master Coding with</span>
+      <div className="pt-24 pb-16 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+            Learn to Code with
             <span className="block text-blue-600">Coding Lanka</span>
           </h1>
-          <p className="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Your journey to becoming a professional developer starts here. Learn from industry experts and join our community of developers.
+          <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
+            Start your journey to becoming a professional developer with our structured 
+            learning paths and comprehensive resources.
           </p>
-          <div className="mt-8 flex justify-center">
-            <Link 
-              href="/get-started"
-              className="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:text-lg"
+          <div className="mt-8 flex justify-center gap-4">
+            <Link
+              href="/career-paths"
+              className="inline-block px-8 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
             >
-              Start Learning for Free
+              Get Started
+            </Link>
+            <Link
+              href="/documentation"
+              className="inline-block px-8 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 font-medium rounded-md hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors"
+            >
+              Browse Documentation
             </Link>
           </div>
-        </div>
+        </motion.div>
+      </div>
 
-        {/* Features Section */}
-        <div className="mt-32">
-          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-            Why Choose Coding Lanka?
-          </h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.title} className="relative bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                <div className="flex flex-col items-center text-center">
-                  <div className="h-12 w-12 mb-4">
-                    <Image
-                      src={feature.icon}
-                      alt={feature.title}
-                      width={48}
-                      height={48}
-                      className="dark:invert"
-                    />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-300">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Career Paths Section */}
-        <div className="mt-32">
-          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-            Choose Your Career Path
-          </h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {careerPaths.map((career) => (
-              <Link 
-                href={career.path} 
-                key={career.title}
-                className="group relative bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-              >
-                <div className="flex flex-col items-center text-center">
-                  <div className="h-12 w-12 mb-4">
-                    <Image
-                      src={career.icon}
-                      alt={career.title}
-                      width={48}
-                      height={48}
-                      className="dark:invert"
-                    />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    {career.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-300">
-                    {career.description}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Testimonials Section */}
-        <div className="mt-32">
-          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-            What Our Students Say
-          </h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.name} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                <div className="flex flex-col items-center text-center">
+      {/* Features Section */}
+      <div className="mt-32">
+        <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+          Why Choose Coding Lanka?
+        </h2>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+          {features.map((feature) => (
+            <div key={feature.title} className="relative bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <div className="flex flex-col items-center text-center">
+                <div className="h-12 w-12 mb-4">
                   <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    width={64}
-                    height={64}
-                    className="rounded-full mb-4"
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={48}
+                    height={48}
+                    className="dark:invert"
                   />
-                  <p className="text-gray-600 dark:text-gray-300 italic mb-4">"{testimonial.text}"</p>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
                 </div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-300">
+                  {feature.description}
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        {/* CTA Section */}
-        <div className="mt-32 bg-blue-600 rounded-2xl p-8 sm:p-12">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Start Your Journey?
-            </h2>
-            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join thousands of students who have already started their journey to becoming professional developers.
-            </p>
+      {/* Career Paths Section */}
+      <div className="mt-32">
+        <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+          Choose Your Career Path
+        </h2>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {careerPaths.map((career) => (
             <Link 
-              href="/signup"
-              className="inline-block px-8 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-blue-600 transition-colors"
+              href={career.path} 
+              key={career.title}
+              className="group relative bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              Sign Up Now
+              <div className="flex flex-col items-center text-center">
+                <div className="h-12 w-12 mb-4">
+                  <Image
+                    src={career.icon}
+                    alt={career.title}
+                    width={48}
+                    height={48}
+                    className="dark:invert"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  {career.title}
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-300">
+                  {career.description}
+                </p>
+              </div>
             </Link>
-          </div>
+          ))}
         </div>
-      </main>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="mt-32">
+        <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+          What Our Students Say
+        </h2>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.name} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <div className="flex flex-col items-center text-center">
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  width={64}
+                  height={64}
+                  className="rounded-full mb-4"
+                />
+                <p className="text-gray-600 dark:text-gray-300 italic mb-4">"{testimonial.text}"</p>
+                <h4 className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</h4>
+                <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="mt-32 bg-blue-600 rounded-2xl p-8 sm:p-12">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Ready to Start Your Journey?
+          </h2>
+          <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+            Join thousands of students who have already started their journey to becoming professional developers.
+          </p>
+          <Link 
+            href="/signup"
+            className="inline-block px-8 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-blue-600 transition-colors"
+          >
+            Sign Up Now
+          </Link>
+        </div>
+      </div>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-300 mt-32 py-12">
