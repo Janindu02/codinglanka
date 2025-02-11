@@ -9,25 +9,25 @@ export default function Home() {
   const careerPaths = [
     {
       title: "Frontend Development",
-      icon: "/images/career-icons/frontend.svg",
+      icon: "/images/home/web-developer.png",
       description: "Master React, Vue, and modern web technologies",
       path: "/careers/frontend"
     },
     {
       title: "Backend Development",
-      icon: "/images/career-icons/backend.svg",
+      icon: "/images/home/backend.png",
       description: "Learn Node.js, Python, and server-side engineering",
       path: "/careers/backend"
     },
     {
       title: "Full Stack Development",
-      icon: "/images/career-icons/fullstack.svg",
+      icon: "/images/home/developer.png",
       description: "Become a complete web developer",
       path: "/careers/fullstack"
     },
     {
       title: "AI/ML Engineering",
-      icon: "/images/career-icons/ai.svg",
+      icon: "/images/home/machine-learning.png",
       description: "Dive into artificial intelligence and machine learning",
       path: "/careers/ai"
     }
@@ -36,17 +36,17 @@ export default function Home() {
   const features = [
     {
       title: "Structured Learning Paths",
-      icon: "/images/feature-icons/path.svg",
+      icon: "/images/home/careergoals.png",
       description: "Follow carefully designed career paths to achieve your goals"
     },
     {
       title: "Free YouTube Videos",
-      icon: "/images/feature-icons/resources.svg",
+      icon: "/images/home/youtube.png",
       description: "Access carefully curated YouTube tutorials and learning materials covering web development, programming, and software engineering"
     },
     {
       title: "Free Documentation",
-      icon: "/images/feature-icons/progress.svg",
+      icon: "/images/home/contract.png",
       description: "Access valuable documentation relevant to software engineering"
     }
   ];
@@ -131,7 +131,7 @@ export default function Home() {
       </div>
 
       {/* Career Paths Section */}
-      <div className="mt-32">
+      <div className="mt-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
           Choose Your Career Path
         </h2>
@@ -140,22 +140,22 @@ export default function Home() {
             <Link 
               href={career.path} 
               key={career.title}
-              className="group relative bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="group relative bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="h-12 w-12 mb-4">
+                <div className="h-16 w-16 mb-6">
                   <Image
                     src={career.icon}
                     alt={career.title}
-                    width={48}
-                    height={48}
-                    className="dark:invert"
+                    width={64}
+                    height={64}
+                    className="object-contain"
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                   {career.title}
                 </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-300">
+                <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                   {career.description}
                 </p>
               </div>
@@ -165,24 +165,24 @@ export default function Home() {
       </div>
 
       {/* Testimonials Section */}
-      <div className="mt-32">
+      <div className="mt-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
           What Our Students Say
         </h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.name} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div key={testimonial.name} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
               <div className="flex flex-col items-center text-center">
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
-                  width={64}
-                  height={64}
-                  className="rounded-full mb-4"
+                  width={80}
+                  height={80}
+                  className="rounded-full mb-6"
                 />
-                <p className="text-gray-600 dark:text-gray-300 italic mb-4">"{testimonial.text}"</p>
-                <h4 className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-300 italic mb-6 leading-relaxed">"{testimonial.text}"</p>
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{testimonial.name}</h4>
+                <p className="text-base text-gray-500 dark:text-gray-400">{testimonial.role}</p>
               </div>
             </div>
           ))}
@@ -190,20 +190,22 @@ export default function Home() {
       </div>
 
       {/* CTA Section */}
-      <div className="mt-32 bg-blue-600 rounded-2xl p-8 sm:p-12">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Start Your Journey?
-          </h2>
-          <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of students who have already started their journey to becoming professional developers.
-          </p>
-          <Link 
-            href="/signup"
-            className="inline-block px-8 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-blue-600 transition-colors"
-          >
-            Sign Up Now
-          </Link>
+      <div className="mt-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="bg-blue-600 rounded-2xl p-8 sm:p-12">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Ready to Start Your Journey?
+            </h2>
+            <p className="text-lg text-blue-100 mb-8 leading-relaxed">
+              Join thousands of students who have already started their journey to becoming professional developers.
+            </p>
+            <Link 
+              href="/signup"
+              className="inline-block px-8 py-4 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-blue-600 transition-colors text-lg"
+            >
+              Sign Up Now
+            </Link>
+          </div>
         </div>
       </div>
     </div>
