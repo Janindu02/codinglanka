@@ -4,192 +4,146 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const features = [
-  {
-    title: "Structured Career Paths",
-    description: "Follow carefully designed learning paths to become a professional developer",
-    icon: "/icons/path.svg"
-  },
-  {
-    title: "Free Resources",
-    description: "Access curated learning materials from the best sources across the web",
-    icon: "/icons/resources.svg"
-  },
-  {
-    title: "Certification Program",
-    description: "Earn certificates as you complete courses and projects",
-    icon: "/icons/certificate.svg"
-  },
-  {
-    title: "Community Support",
-    description: "Join a thriving community of developers and mentors",
-    icon: "/icons/community.svg"
-  }
-];
-
-const teamMembers = [
-  {
-    name: "Ashan Perera",
-    role: "Founder & Lead Instructor",
-    image: "/team/ashan.jpg",
-    description: "Full Stack Developer with 10+ years of experience"
-  },
-  {
-    name: "Malini Silva",
-    role: "Content Director",
-    image: "/team/malini.jpg",
-    description: "Educational content specialist and former lecturer"
-  },
-  {
-    name: "Raj Kumar",
-    role: "Technical Mentor",
-    image: "/team/raj.jpg",
-    description: "Senior Software Engineer specializing in AI/ML"
-  }
-];
-
 export default function AboutPage() {
+  const offerings = [
+    {
+      title: "Curated YouTube Playlists",
+      icon: "/images/home/youtube.png",
+      description: "Carefully selected and categorized video tutorials covering web development, programming languages, and software engineering concepts."
+    },
+    {
+      title: "Free Documentation & Resources",
+      icon: "/images/home/contract.png",
+      description: "Comprehensive collection of free documentation, e-books, and learning materials from trusted sources in the tech industry."
+    },
+    {
+      title: "Structured Learning Paths",
+      icon: "/images/home/careergoals.png",
+      description: "Guided pathways that organize free resources in a logical sequence, helping you progress from basics to advanced concepts."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-      {/* Hero Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="pt-24 pb-16 text-center"
-      >
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-          Empowering Future Coders
-          <span className="block text-blue-600">in Sri Lanka</span>
-        </h1>
-        <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
-          Coding Lanka is on a mission to democratize coding education in Sri Lanka. 
-          We believe that everyone should have access to quality programming education, 
-          regardless of their background.
-        </p>
-      </motion.div>
-
-      {/* Mission & Vision Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 py-16"
-        >
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Mission</h2>
-            <p className="text-gray-600 dark:text-gray-300">
-              To provide free and structured coding education for aspiring developers, 
-              making technology education accessible to everyone in Sri Lanka.
-            </p>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Vision</h2>
-            <p className="text-gray-600 dark:text-gray-300">
-              To create a thriving community of Sri Lankan developers skilled in software 
-              engineering and AI, contributing to the global tech ecosystem.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* What We Offer Section */}
+      {/* Hero Section - Increased top padding and bottom margin */}
+      <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="py-16"
+          transition={{ duration: 0.5 }}
+          className="max-w-7xl mx-auto text-center"
         >
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
-            What We Offer
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature) => (
-              <div 
-                key={feature.title}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6"
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl mb-8">
+            Bringing All Free Learning Resources Together
+          </h1>
+          <p className="mt-8 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Explore the best free coding tutorials, YouTube playlists, free documentation, and valuable online resources all in one place!
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Mission & Vision Section - Increased padding */}
+      <div className="py-24 bg-white dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            {/* Mission */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="space-y-8"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                Our Mission
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                To centralize and provide free access to high-quality coding resources, including YouTube tutorials, free documentation, and curated learning paths, ensuring that everyone—regardless of background—can learn software development efficiently.
+              </p>
+            </motion.div>
+
+            {/* Vision */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="space-y-8"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                Our Vision
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                To build a knowledge hub where aspiring developers can find all free programming materials in one place, empowering them to excel in software engineering and contribute to the global tech industry.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* What We Offer Section - Increased spacing */}
+      <div id="offerings" className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-24"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+              What We Offer
+            </h2>
+            <p className="mt-6 text-xl text-gray-600 dark:text-gray-300">
+              Everything you need to start your software development journey, completely free.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {offerings.map((offering, index) => (
+              <motion.div
+                key={offering.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white dark:bg-gray-800 p-10 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="h-12 w-12 mb-4">
+                  <div className="h-20 w-20 mb-8">
                     <Image
-                      src={feature.icon}
-                      alt={feature.title}
-                      width={48}
-                      height={48}
-                      className="dark:invert"
+                      src={offering.icon}
+                      alt={offering.title}
+                      width={80}
+                      height={80}
+                      className="object-contain dark:invert"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    {feature.title}
+                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+                    {offering.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    {feature.description}
+                  <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {offering.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
+      </div>
 
-        {/* Team Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="py-16"
-        >
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
-            Meet the Team
+      {/* CTA Section - Increased padding */}
+      <div className="py-24 bg-blue-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-10">
+            Ready to Start Learning?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member) => (
-              <div 
-                key={member.name}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
-              >
-                <div className="aspect-w-16 aspect-h-9 relative">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    {member.name}
-                  </h3>
-                  <p className="text-blue-600 dark:text-blue-400 mb-2">{member.role}</p>
-                  <p className="text-gray-600 dark:text-gray-300">{member.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* CTA Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="py-16"
-        >
-          <div className="bg-blue-600 rounded-2xl p-8 sm:p-12 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Start Your Journey?
-            </h2>
-            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join thousands of students who have already started their journey to becoming 
-              professional developers with Coding Lanka.
-            </p>
-            <Link 
-              href="/career-paths"
-              className="inline-block px-8 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-blue-600 transition-colors"
-            >
-              Get Started
-            </Link>
-          </div>
-        </motion.div>
+          <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Join our community and access all the free resources you need to become a successful developer.
+          </p>
+          <Link
+            href="/auth"
+            className="inline-block px-10 py-5 border-2 border-white text-white text-xl font-medium rounded-md hover:bg-white hover:text-blue-600 transition-colors"
+          >
+            Get Started Now
+          </Link>
+        </div>
       </div>
     </div>
   );

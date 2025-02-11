@@ -37,17 +37,20 @@ export default function Home() {
     {
       title: "Structured Learning Paths",
       icon: "/images/home/careergoals.png",
-      description: "Follow carefully designed career paths to achieve your goals"
+      description: "Follow carefully designed career paths to achieve your goals",
+      link: "/career-paths"
     },
     {
       title: "Free YouTube Videos",
       icon: "/images/home/youtube.png",
-      description: "Access carefully curated YouTube tutorials and learning materials covering web development, programming, and software engineering"
+      description: "Access carefully curated YouTube tutorials and learning materials covering web development, programming, and software engineering",
+      link: "/youtube"
     },
     {
       title: "Free Documentation",
       icon: "/images/home/contract.png",
-      description: "Access valuable documentation relevant to software engineering"
+      description: "Access valuable documentation relevant to software engineering",
+      link: "/documentation"
     }
   ];
 
@@ -66,71 +69,161 @@ export default function Home() {
     }
   ];
 
+  const headingVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <Navbar />
       
-      {/* Hero Section */}
-      <div className="pt-24 pb-16 text-center">
+      {/* Updated Hero Section with Text Animations */}
+      <div className="pt-32 pb-24 text-center px-4 sm:px-6 lg:px-8">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
+          className="max-w-7xl mx-auto"
         >
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-            Learn to Code with
-            <span className="block text-blue-600">Coding Lanka</span>
-          </h1>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
-            Start your journey to becoming a professional developer with our structured 
-            learning paths and comprehensive resources.
-          </p>
-          <div className="mt-8 flex justify-center gap-4">
-            <Link
-              href="/career-paths"
-              className="inline-block px-8 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
+          <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl mb-8 space-y-4">
+            <motion.span
+              initial="hidden"
+              animate="visible"
+              variants={headingVariants}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="block text-gray-900 dark:text-white"
             >
-              Get Started
-            </Link>
+              Discover the Best
+            </motion.span>
+            <motion.span
+              initial="hidden"
+              animate="visible"
+              variants={headingVariants}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="block text-blue-600 mt-2"
+            >
+              Free Learning Resources
+            </motion.span>
+            <motion.span
+              initial="hidden"
+              animate="visible"
+              variants={headingVariants}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="block text-gray-900 dark:text-white"
+            >
+              for Aspiring Developers
+            </motion.span>
+          </h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="mt-8 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12"
+          >
+            Access curated YouTube tutorials, free documentation, structured learning paths, and more all in one place!
+          </motion.p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-6 mt-12">
             <Link
               href="/documentation"
-              className="inline-block px-8 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 font-medium rounded-md hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors"
+              className="inline-block px-8 py-4 bg-blue-600 text-white text-lg font-medium rounded-md hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
             >
-              Browse Documentation
+              Browse Resources
             </Link>
+            <Link
+              href="/career-paths"
+              className="inline-block px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 text-lg font-medium rounded-md hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors"
+            >
+              Explore Learning Paths
+            </Link>
+          </div>
+          
+          {/* Quick Stats */}
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+            >
+              <div className="text-blue-600 text-3xl font-bold mb-2">100+</div>
+              <div className="text-gray-600 dark:text-gray-300">Curated YouTube Tutorials</div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+            >
+              <div className="text-blue-600 text-3xl font-bold mb-2">4+</div>
+              <div className="text-gray-600 dark:text-gray-300">Learning Paths</div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+            >
+              <div className="text-blue-600 text-3xl font-bold mb-2">24/7</div>
+              <div className="text-gray-600 dark:text-gray-300">Free Access</div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
 
       {/* Features Section */}
       <div className="mt-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white"
+        >
           Why Choose Coding Lanka?
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-          {features.map((feature) => (
-            <div 
-              key={feature.title} 
-              className="relative bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+          {features.map((feature, index) => (
+            <Link 
+              href={feature.link}
+              key={feature.title}
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="h-16 w-16 mb-6">
-                  <Image
-                    src={feature.icon}
-                    alt={feature.title}
-                    width={64}
-                    height={64}
-                    className="dark:invert"
-                  />
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                className="relative bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg transition-all duration-300 cursor-pointer"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <motion.div 
+                    className="h-16 w-16 mb-6"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      width={64}
+                      height={64}
+                      className="dark:invert"
+                    />
+                  </motion.div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
@@ -211,7 +304,7 @@ export default function Home() {
               Join thousands of students who have already started their journey to becoming professional developers.
             </p>
             <Link 
-              href="/signup"
+              href="/auth"
               className="inline-block px-8 py-4 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-blue-600 transition-colors text-lg"
             >
               Sign Up Now
