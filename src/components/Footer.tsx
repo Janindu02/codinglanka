@@ -9,7 +9,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1">
             <Link href="/" className="flex items-center mb-4">
-              <Image src="/logo.svg" alt="Coding Lanka" width={32} height={32} className="invert" />
+              <Image 
+                src="/images/feature-icons/codinglankalogo.png.png" 
+                alt="Coding Lanka" 
+                width={40} 
+                height={40} 
+                className="rounded-full"
+                priority
+              />
               <span className="ml-2 text-xl font-bold">Coding Lanka</span>
             </Link>
             <p className="text-gray-400">

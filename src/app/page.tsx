@@ -9,25 +9,25 @@ export default function Home() {
   const careerPaths = [
     {
       title: "Frontend Development",
-      icon: "/icons/frontend.svg",
+      icon: "/images/career-icons/frontend.svg",
       description: "Master React, Vue, and modern web technologies",
       path: "/careers/frontend"
     },
     {
       title: "Backend Development",
-      icon: "/icons/backend.svg",
+      icon: "/images/career-icons/backend.svg",
       description: "Learn Node.js, Python, and server-side engineering",
       path: "/careers/backend"
     },
     {
       title: "Full Stack Development",
-      icon: "/icons/fullstack.svg",
+      icon: "/images/career-icons/fullstack.svg",
       description: "Become a complete web developer",
       path: "/careers/fullstack"
     },
     {
       title: "AI/ML Engineering",
-      icon: "/icons/ai.svg",
+      icon: "/images/career-icons/ai.svg",
       description: "Dive into artificial intelligence and machine learning",
       path: "/careers/ai"
     }
@@ -36,17 +36,17 @@ export default function Home() {
   const features = [
     {
       title: "Structured Learning Paths",
-      icon: "/icons/path.svg",
+      icon: "/images/feature-icons/path.svg",
       description: "Follow carefully designed career paths to achieve your goals"
     },
     {
       title: "Free Resources",
-      icon: "/icons/resources.svg",
+      icon: "/images/feature-icons/resources.svg",
       description: "Access curated YouTube tutorials and learning materials"
     },
     {
       title: "Progress Tracking",
-      icon: "/icons/progress.svg",
+      icon: "/images/feature-icons/progress.svg",
       description: "Track your learning journey and earn certificates"
     }
   ];
@@ -55,7 +55,7 @@ export default function Home() {
     {
       name: "Sarah Johnson",
       role: "Frontend Developer",
-      image: "/testimonials/sarah.jpg",
+      image: "/images/testimonials/sarah.jpg",
       text: "Coding Lanka helped me transition from a beginner to a professional developer in just 6 months!"
     },
     // Add more testimonials...
