@@ -40,14 +40,14 @@ export default function Home() {
       description: "Follow carefully designed career paths to achieve your goals"
     },
     {
-      title: "Free Resources",
+      title: "Free YouTube Videos",
       icon: "/images/feature-icons/resources.svg",
-      description: "Access curated YouTube tutorials and learning materials"
+      description: "Access carefully curated YouTube tutorials and learning materials covering web development, programming, and software engineering"
     },
     {
-      title: "Progress Tracking",
+      title: "Free Documentation",
       icon: "/images/feature-icons/progress.svg",
-      description: "Track your learning journey and earn certificates"
+      description: "Access valuable documentation relevant to software engineering"
     }
   ];
 
@@ -98,27 +98,30 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-      <div className="mt-32">
+      <div className="mt-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
           Why Choose Coding Lanka?
         </h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           {features.map((feature) => (
-            <div key={feature.title} className="relative bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div 
+              key={feature.title} 
+              className="relative bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            >
               <div className="flex flex-col items-center text-center">
-                <div className="h-12 w-12 mb-4">
+                <div className="h-16 w-16 mb-6">
                   <Image
                     src={feature.icon}
                     alt={feature.title}
-                    width={48}
-                    height={48}
+                    width={64}
+                    height={64}
                     className="dark:invert"
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-300">
+                <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
