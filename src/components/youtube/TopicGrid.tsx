@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function TopicGrid({ topics, onTopicSelect }) {
   // Group topics into categories
   const categories = {
-    'Core Programming': ['basic-java', 'java', 'python', 'dsa', 'basics'],
+    'Core Programming': ['oop-java', 'java', 'python', 'dsa', 'basics'],
     'Web Development': ['html-css', 'javascript', 'web-dev'],
     'Frontend Frameworks': ['react', 'angular', 'nextjs'],
     'Backend Development': ['nodejs', 'spring-boot'],

@@ -28,12 +28,12 @@ const topics = [
     ]
   },
   {
-    id: 'basic-java',
-    title: 'Basic Java',
-    description: 'Start your Java journey with fundamental concepts and basics',
-    thumbnail: '/images/topics/basic-java.jpg',
+    id: 'oop-java',
+    title: 'OOP (Java)',
+    description: 'Master Object-Oriented Programming concepts with Java including classes, inheritance, polymorphism, encapsulation, and design patterns',
+    thumbnail: '/images/topics/java-oop.jpg',
     playlists: [
-      { id: 'PLfu_Bpi_zcDPNy6qznvbkGZF9sRSFSBKR', title: 'Java Basics for Beginners' }
+      { id: 'PLfu_Bpi_zcDPNy6qznvbkGZF9sRSFSBKR', title: 'Java OOP Concepts' }
     ]
   },
   {
