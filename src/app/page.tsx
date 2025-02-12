@@ -26,7 +26,7 @@ export default function Home() {
       path: "/careers/fullstack"
     },
     {
-      title: "AI/ML Engineering",
+      title: "AI Engineering",
       icon: "/images/home/machine-learning.png",
       description: "Dive into artificial intelligence and machine learning",
       path: "/careers/ai"
