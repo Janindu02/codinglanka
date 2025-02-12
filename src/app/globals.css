@@ -30,3 +30,22 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Optimize images */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* For next/image */
+.next-image-wrapper {
+  position: relative !important;
+}
+
+/* For responsive images */
+@supports (object-fit: cover) {
+  .object-cover {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
