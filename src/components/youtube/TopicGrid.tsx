@@ -6,11 +6,9 @@ import Image from 'next/image';
 export default function TopicGrid({ topics, onTopicSelect }) {
   // Group topics into categories
   const categories = {
-    'Core Programming': ['oop-java', 'java', 'python', 'dsa', 'basics'],
-    'Web Development': ['html-css', 'javascript', 'web-dev'],
-    'Frontend Frameworks': ['react', 'angular', 'nextjs'],
-    'Backend Development': ['nodejs', 'spring-boot'],
-    'CMS': ['wp']
+    'Core Programming': ['java', 'oop-java', 'python'],
+    'Computer Science': ['dsa'],
+    'Career Fundamentals': ['basics']
   };
 
   return (
@@ -38,7 +36,10 @@ export default function TopicGrid({ topics, onTopicSelect }) {
                       src={topic.thumbnail}
                       alt={topic.title}
                       fill
-                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-contain p-4"
+                      quality={95}
+                      priority={index === 0}
                     />
                   </div>
                   <div className="p-6">

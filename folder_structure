@@ -1,0 +1,18 @@
+public/
+  └── images/
+      └── topics/
+          ├── java/
+          │   ├── tutorial.jpg
+          │   ├── oop.jpg
+          │   └── advanced.jpg
+          ├── python/
+          │   └── python-basics.jpg
+          ├── web-dev/
+          │   ├── html-css.jpg
+          │   ├── javascript.jpg
+          │   └── react.jpg
+          └── thumbnails/
+              └── playlist-covers/
+                  ├── java-playlist.jpg
+                  ├── web-dev-playlist.jpg
+                  └── python-playlist.jpg 

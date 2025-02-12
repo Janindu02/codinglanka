@@ -22,7 +22,7 @@ const topics = [
     id: 'java',
     title: 'Java',
     description: 'Master Java programming with comprehensive tutorials',
-    thumbnail: '/images/topics/java.jpg',
+    thumbnail: '/images/youtube/Java-Logo.png',
     playlists: [
       { id: 'PLS1QulWo1RIbfTjQvTdj8Y6yyq4R7g-Al', title: 'Java Programming' }
     ]
@@ -31,7 +31,7 @@ const topics = [
     id: 'oop-java',
     title: 'OOP (Java)',
     description: 'Master Object-Oriented Programming concepts with Java including classes, inheritance, polymorphism, encapsulation, and design patterns',
-    thumbnail: '/images/topics/java-oop.jpg',
+    thumbnail: '/images/youtube/ooppng.png',
     playlists: [
       { id: 'PLfu_Bpi_zcDPNy6qznvbkGZF9sRSFSBKR', title: 'Java OOP Concepts' }
     ]
@@ -40,7 +40,7 @@ const topics = [
     id: 'python',
     title: 'Python',
     description: 'Learn Python programming from basics to advanced concepts',
-    thumbnail: '/images/topics/python.jpg',
+    thumbnail: '/images/youtube/pythonpng.png',
     playlists: [
       { id: 'PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU', title: 'Python Tutorials' }
     ]
@@ -121,7 +121,7 @@ const topics = [
     id: 'dsa',
     title: 'Data Structures and Algorithms',
     description: 'Master essential computer science concepts and problem-solving',
-    thumbnail: '/images/topics/dsa.jpg',
+    thumbnail: '/images/youtube/dsapng.png',
     playlists: [
       { id: 'PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ', title: 'DSA Complete Course' }
     ]
@@ -130,7 +130,7 @@ const topics = [
     id: 'basics',
     title: 'Basic Knowledge for Software Engineering',
     description: 'Essential concepts every software engineer should know',
-    thumbnail: '/images/topics/basics.jpg',
+    thumbnail: '/images/youtube/softwareengineerpng.webp',
     playlists: [
       { id: 'PLWKjhJtqVAbkso-IbgiiP48n-O-JQA9PJ', title: 'Programming Fundamentals' }
     ]

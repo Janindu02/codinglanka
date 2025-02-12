@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Icon from '@/components/ui/Icon';
+import TopicThumbnail from '@/components/youtube/TopicThumbnail';
 
 declare global {
   interface Window {
@@ -24,26 +25,30 @@ export default function PlaylistViewer({ topic }) {
     id: 'PLBlnK6fEyqRjKA_NuK9mHmlk0dZzuP1P5',
     currentTopic: {
       title: "Java Programming Tutorial",
-      description: "Learn Java programming from scratch with comprehensive tutorials"
+      description: "Learn Java programming from scratch with comprehensive tutorials",
+      coverImage: "/images/youtube/java/playlist-cover.jpg"
     },
     videos: [
       { 
         id: 'VHbSopMyc4M', 
         title: 'Java Programming Tutorial',
         duration: '2:15:30',
-        thumbnail: '/images/topics/java-tutorial.jpg'
+        thumbnail: '/images/youtube/java/tutorial/basics.jpg',
+        description: 'Complete Java programming tutorial covering basic to advanced concepts'
       },
       { 
         id: 'xTtL8E4LzTQ', 
         title: 'Java OOP Concepts',
         duration: '1:45:20',
-        thumbnail: '/images/topics/java-oop.jpg'
+        thumbnail: '/images/youtube/java/oop/classes.jpg',
+        description: 'Master Object-Oriented Programming concepts in Java'
       },
       { 
         id: 'A74TOX803D0', 
         title: 'Java Advanced Topics',
         duration: '1:30:15',
-        thumbnail: '/images/topics/java-advanced.jpg'
+        thumbnail: '/images/youtube/java/advanced/collections.jpg',
+        description: 'Advanced Java programming concepts and best practices'
       }
     ]
   };
@@ -199,7 +204,7 @@ export default function PlaylistViewer({ topic }) {
             <h3 className="font-semibold text-gray-900 dark:text-white mb-4 px-2">
               Course Content
             </h3>
-            <div className="space-y-2 max-h-[calc(100vh-300px)] overflow-y-auto">
+            <div className="space-y-4 max-h-[calc(100vh-300px)] overflow-y-auto">
               {javaPlaylist.videos.map((video, index) => (
                 <motion.button
                   key={video.id}
@@ -209,31 +214,32 @@ export default function PlaylistViewer({ topic }) {
                       setCurrentVideo(index);
                     }
                   }}
-                  className={`w-full p-3 rounded-lg text-left transition-all ${
+                  className={`w-full rounded-lg overflow-hidden ${
                     currentVideo === index
-                      ? 'bg-blue-50 dark:bg-blue-900/50 border-l-4 border-blue-600'
+                      ? 'ring-2 ring-blue-600 dark:ring-blue-400'
                       : 'hover:bg-gray-50 dark:hover:bg-gray-700'
                   }`}
-                  whileHover={{ x: 4 }}
+                  whileHover={{ scale: 1.02 }}
                 >
-                  <div className="flex items-center">
-                    <div className="relative w-full aspect-video mb-3">
-                      <Image
-                        src={video.thumbnail}
-                        alt={video.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover rounded-lg"
-                        quality={95}
-                        loading={index === 0 ? 'eager' : 'lazy'}
-                      />
-                    </div>
-                    <div className="ml-3">
-                      <p className={`font-medium ${currentVideo === index ? 'text-blue-600' : 'text-gray-900 dark:text-white'}`}>
+                  <div className="p-2">
+                    <TopicThumbnail
+                      src={video.thumbnail}
+                      alt={video.title}
+                      isActive={currentVideo === index}
+                    />
+                    <div className="mt-2">
+                      <p className={`font-medium ${
+                        currentVideo === index 
+                          ? 'text-blue-600 dark:text-blue-400' 
+                          : 'text-gray-900 dark:text-white'
+                      }`}>
                         {video.title}
                       </p>
-                      <p className="text-sm text-gray-500">
-                        {video.duration}
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                        {video.description}
+                      </p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                        Duration: {video.duration}
                       </p>
                     </div>
                   </div>

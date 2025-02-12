@@ -47,6 +47,23 @@ export default function ContactPage() {
     setIsSubmitting(false);
   };
 
+  const contactInfo = {
+    email: 'janinduamaraweera@gmail.com',
+    location: 'Colombo, Sri Lanka',
+    social: [
+      {
+        name: 'Facebook',
+        url: 'https://facebook.com/codinglanka',
+        icon: '/icons/facebook.svg'
+      },
+      {
+        name: 'Threads',
+        url: 'https://www.threads.net/@janindu_inspires',
+        icon: '/icons/threads.svg'
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       {/* Hero Section */}
@@ -69,10 +86,10 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8"
           >
             <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
               Send us a Message
@@ -167,56 +184,58 @@ export default function ContactPage() {
           </motion.div>
 
           {/* Contact Information */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-8"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-              <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
-                Other Ways to Reach Us
-              </h2>
-              <div className="space-y-4">
+            {/* Contact Details */}
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+              <div className="space-y-6">
+                {/* Email */}
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
                     <Image src="/icons/email.svg" alt="Email" width={24} height={24} className="dark:invert" />
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-gray-900 dark:text-white">Email</p>
-                    <a href="mailto:support@codinglanka.com" className="text-blue-600 hover:text-blue-500">
-                      support@codinglanka.com
-                    </a>
-                  </div>
+                  <a href={`mailto:${contactInfo.email}`} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                    {contactInfo.email}
+                  </a>
                 </div>
 
+                {/* Location */}
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
                     <Image src="/icons/location.svg" alt="Location" width={24} height={24} className="dark:invert" />
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-gray-900 dark:text-white">Location</p>
-                    <p className="text-gray-600 dark:text-gray-300">Colombo, Sri Lanka</p>
-                  </div>
+                  <span className="text-gray-600 dark:text-gray-300">
+                    {contactInfo.location}
+                  </span>
                 </div>
 
+                {/* Social Links */}
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
                     <Image src="/icons/social.svg" alt="Social" width={24} height={24} className="dark:invert" />
                   </div>
                   <div className="flex space-x-4">
-                    <a href="#" className="text-gray-400 hover:text-gray-500">
-                      <span className="sr-only">Facebook</span>
-                      <Image src="/icons/facebook.svg" alt="Facebook" width={24} height={24} className="dark:invert" />
-                    </a>
-                    <a href="#" className="text-gray-400 hover:text-gray-500">
-                      <span className="sr-only">Twitter</span>
-                      <Image src="/icons/twitter.svg" alt="Twitter" width={24} height={24} className="dark:invert" />
-                    </a>
-                    <a href="#" className="text-gray-400 hover:text-gray-500">
-                      <span className="sr-only">LinkedIn</span>
-                      <Image src="/icons/linkedin.svg" alt="LinkedIn" width={24} height={24} className="dark:invert" />
-                    </a>
+                    {contactInfo.social.map((platform) => (
+                      <a
+                        key={platform.name}
+                        href={platform.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                      >
+                        <Image
+                          src={platform.icon}
+                          alt={platform.name}
+                          width={24}
+                          height={24}
+                          className="dark:invert"
+                        />
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
