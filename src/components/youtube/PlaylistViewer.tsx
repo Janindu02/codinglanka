@@ -5,6 +5,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Icon from '@/components/ui/Icon';
 import TopicThumbnail from '@/components/youtube/TopicThumbnail';
+import javaPlaylist from './playlists/JavaPlaylist';
+import oopPlaylist from './playlists/OOPPlaylist';
+import pythonPlaylist from './playlists/PythonPlaylist';
+import dsaPlaylist from './playlists/DSAPlaylist';
+import basicsPlaylist from './playlists/BasicsPlaylist';
 
 declare global {
   interface Window {
@@ -12,6 +17,14 @@ declare global {
     onYouTubeIframeAPIReady: () => void;
   }
 }
+
+const playlists = {
+  java: javaPlaylist,
+  'oop-java': oopPlaylist,
+  python: pythonPlaylist,
+  dsa: dsaPlaylist,
+  basics: basicsPlaylist
+};
 
 export default function PlaylistViewer({ topic }) {
   const playerRef = useRef<any>(null);
@@ -21,37 +34,7 @@ export default function PlaylistViewer({ topic }) {
   const [quality, setQuality] = useState('auto');
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const javaPlaylist = {
-    id: 'PLBlnK6fEyqRjKA_NuK9mHmlk0dZzuP1P5',
-    currentTopic: {
-      title: "Java Programming Tutorial",
-      description: "Learn Java programming from scratch with comprehensive tutorials",
-      coverImage: "/images/youtube/java/playlist-cover.jpg"
-    },
-    videos: [
-      { 
-        id: 'VHbSopMyc4M', 
-        title: 'Java Programming Tutorial',
-        duration: '2:15:30',
-        thumbnail: '/images/youtube/java/tutorial/basics.jpg',
-        description: 'Complete Java programming tutorial covering basic to advanced concepts'
-      },
-      { 
-        id: 'xTtL8E4LzTQ', 
-        title: 'Java OOP Concepts',
-        duration: '1:45:20',
-        thumbnail: '/images/youtube/java/oop/classes.jpg',
-        description: 'Master Object-Oriented Programming concepts in Java'
-      },
-      { 
-        id: 'A74TOX803D0', 
-        title: 'Java Advanced Topics',
-        duration: '1:30:15',
-        thumbnail: '/images/youtube/java/advanced/collections.jpg',
-        description: 'Advanced Java programming concepts and best practices'
-      }
-    ]
-  };
+  const currentPlaylist = playlists[topic.id];
 
   useEffect(() => {
     // Load YouTube IFrame API
@@ -64,7 +47,7 @@ export default function PlaylistViewer({ topic }) {
       const newPlayer = new window.YT.Player('youtube-player', {
         height: '100%',
         width: '100%',
-        videoId: javaPlaylist.videos[currentVideo].id,
+        videoId: currentPlaylist.videos[currentVideo].id,
         playerVars: {
           autoplay: 0,
           controls: 1,
@@ -119,10 +102,10 @@ export default function PlaylistViewer({ topic }) {
       {/* Current Topic Title */}
       <div className="mb-8 text-center">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-          {javaPlaylist.currentTopic.title}
+          {currentPlaylist.currentTopic.title}
         </h2>
         <p className="text-gray-600 dark:text-gray-300">
-          {javaPlaylist.currentTopic.description}
+          {currentPlaylist.currentTopic.description}
         </p>
       </div>
 
@@ -205,7 +188,7 @@ export default function PlaylistViewer({ topic }) {
               Course Content
             </h3>
             <div className="space-y-4 max-h-[calc(100vh-300px)] overflow-y-auto">
-              {javaPlaylist.videos.map((video, index) => (
+              {currentPlaylist.videos.map((video, index) => (
                 <motion.button
                   key={video.id}
                   onClick={() => {
