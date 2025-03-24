@@ -25,7 +25,7 @@ const playlists = {
   basics: basicsPlaylist
 };
 
-export default function PlaylistViewer({ topic }) {
+export default function PlaylistViewer({ topic }: { topic: { id: string } }) {
   const playerRef = useRef<any>(null);
   const [player, setPlayer] = useState<any>(null);
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -187,7 +187,7 @@ export default function PlaylistViewer({ topic }) {
               Course Content
             </h3>
             <div className="space-y-4 max-h-[calc(100vh-300px)] overflow-y-auto">
-              {currentPlaylist.videos.map((video, index) => (
+              {currentPlaylist.videos.map((video: any, index: number) => (
                 <motion.button
                   key={video.id}
                   onClick={() => {
