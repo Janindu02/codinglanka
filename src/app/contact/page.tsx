@@ -78,7 +78,7 @@ export default function ContactPage() {
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
           Have questions about our courses? Want to partner with us? Or just want to say hello? 
-          We'd love to hear from you!
+          We&apos;d love to hear from you!
         </p>
       </motion.div>
 

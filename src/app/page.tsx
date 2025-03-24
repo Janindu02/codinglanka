@@ -279,7 +279,7 @@ export default function Home() {
                   className="rounded-full mb-6"
                 />
                 <p className="text-lg text-gray-600 dark:text-gray-300 italic mb-6 leading-relaxed">
-                  "{testimonial.text}"
+                  &quot;{testimonial.text}&quot;
                 </p>
                 <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                   {testimonial.name}

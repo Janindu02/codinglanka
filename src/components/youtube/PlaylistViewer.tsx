@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Icon from '@/components/ui/Icon';
 import TopicThumbnail from '@/components/youtube/TopicThumbnail';
 import javaPlaylist from './playlists/JavaPlaylist';
@@ -71,7 +70,7 @@ export default function PlaylistViewer({ topic }) {
         playerRef.current.destroy();
       }
     };
-  }, []);
+  }, [currentPlaylist.videos, currentVideo]);
 
   const handleVolumeChange = (newVolume: number) => {
     if (player) {
