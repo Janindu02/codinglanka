@@ -1,9 +1,21 @@
 'use client';
 
+import React from 'react';
+import Link from 'next/link';
+import TopicCard from '@/components/youtube/TopicCard';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-export default function TopicGrid({ topics, onTopicSelect }) {
+// Define the Topic interface
+interface Topic {
+  id: string;
+  title: string;
+  description: string;
+  icon?: string;
+  image?: string;
+}
+
+export default function TopicGrid({ topics }: { topics: Topic[] }) {
   // Group topics into categories
   const categories = {
     'Core Programming': ['java', 'oop-java', 'python'],
@@ -29,7 +41,6 @@ export default function TopicGrid({ topics, onTopicSelect }) {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
                   className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer"
-                  onClick={() => onTopicSelect(topic)}
                 >
                   <div className="relative h-48">
                     <Image
