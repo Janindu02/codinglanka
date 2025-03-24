@@ -12,12 +12,39 @@ import basicsPlaylist from './playlists/BasicsPlaylist';
 
 declare global {
   interface Window {
-    YT: any;
+    YT: {
+      Player: any;
+      PlayerState: {
+        PLAYING: number;
+      };
+    };
     onYouTubeIframeAPIReady: () => void;
   }
 }
 
-const playlists = {
+// Define a type for the playlist topic IDs
+type PlaylistId = 'java' | 'oop-java' | 'python' | 'dsa' | 'basics';
+
+// Define the video structure
+interface Video {
+  id: string;
+  title: string;
+  description: string;
+  thumbnail: string;
+  duration: string;
+}
+
+// Define the playlist structure
+interface Playlist {
+  currentTopic: {
+    title: string;
+    description: string;
+  };
+  videos: Video[];
+}
+
+// Define the playlists object with proper typing
+const playlists: Record<PlaylistId, Playlist> = {
   java: javaPlaylist,
   'oop-java': oopPlaylist,
   python: pythonPlaylist,
@@ -25,7 +52,7 @@ const playlists = {
   basics: basicsPlaylist
 };
 
-export default function PlaylistViewer({ topic }: { topic: { id: string } }) {
+export default function PlaylistViewer({ topic }: { topic: { id: PlaylistId } }) {
   const playerRef = useRef<any>(null);
   const [player, setPlayer] = useState<any>(null);
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -54,10 +81,10 @@ export default function PlaylistViewer({ topic }: { topic: { id: string } }) {
           rel: 0,
         },
         events: {
-          onReady: (event: any) => {
+          onReady: (event: { target: any }) => {
             setPlayer(event.target);
           },
-          onStateChange: (event: any) => {
+          onStateChange: (event: { data: number }) => {
             setIsPlaying(event.data === window.YT.PlayerState.PLAYING);
           }
         }
@@ -187,7 +214,7 @@ export default function PlaylistViewer({ topic }: { topic: { id: string } }) {
               Course Content
             </h3>
             <div className="space-y-4 max-h-[calc(100vh-300px)] overflow-y-auto">
-              {currentPlaylist.videos.map((video: any, index: number) => (
+              {currentPlaylist.videos.map((video: Video, index: number) => (
                 <motion.button
                   key={video.id}
                   onClick={() => {
