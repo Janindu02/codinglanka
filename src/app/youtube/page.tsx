@@ -176,7 +176,7 @@ export default function YouTubePage() {
             </motion.div>
           ) : (
             <>
-              <TopicGrid topics={topics} onTopicSelect={setSelectedTopic} />
+              <TopicGrid topics={topics} />
               <AISection />
             </>
           )}
