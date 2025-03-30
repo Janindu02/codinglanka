@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import TopicCard from '@/components/youtube/TopicCard';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -13,6 +12,7 @@ interface Topic {
   description: string;
   icon?: string;
   image?: string;
+  thumbnail?: string;
 }
 
 export default function TopicGrid({ topics }: { topics: Topic[] }) {
@@ -44,7 +44,7 @@ export default function TopicGrid({ topics }: { topics: Topic[] }) {
                 >
                   <div className="relative h-48">
                     <Image
-                      src={topic.thumbnail}
+                      src={topic.thumbnail || '/placeholder-image.jpg'}
                       alt={topic.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
